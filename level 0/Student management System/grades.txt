@@ -1,0 +1,9 @@
+5,shubham,b
+
+2,shubham,A
+
+1001,shubham,A
+
+102,dikshya,40
+
+101,shubham shah,100
