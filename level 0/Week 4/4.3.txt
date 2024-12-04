@@ -1,0 +1,26 @@
+4.3
+import numpy as np
+
+# Generate an array of random integers
+random_array = np.random.randint(1, 100, size=10)
+
+# Sort the array
+sorted_array = np.sort(random_array)
+
+# Determine feasible dimensions for reshaping
+num_elements = sorted_array.size
+possible_dimensions = []
+for i in range(1, num_elements + 1):
+    if num_elements % i == 0:
+        possible_dimensions.append((i, num_elements // i))
+
+# Reshape the array into a matrix of feasible dimensions
+if possible_dimensions:
+    row, col = possible_dimensions[-1]  # Choose the largest feasible dimensions
+    reshaped_matrix = sorted_array.reshape(row, col)
+    print("Original sorted array:")
+    print(sorted_array)
+    print("\nReshaped matrix:")
+    print(reshaped_matrix)
+else:
+    print("Unable to reshape the array into a matrix of feasible dimensions.")

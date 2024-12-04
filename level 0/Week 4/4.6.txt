@@ -1,0 +1,27 @@
+4.6
+import pandas as pd
+
+# Read the data from the CSV file into a DataFrame
+data = pd.read_csv("weight_height.csv")
+
+# Calculate BMI and assign to a new column
+data['BMI'] = data['Weight'] / (data['Height'] ** 2) * 703  # Using the formula f
+
+# Define a function to determine risk based on BMI
+def calculate_risk(bmi):
+    if bmi < 18.5:
+        return 'Nutrient deficient'
+    elif 18.5 <= bmi < 25:
+        return 'Lesser risk'
+    elif 25 <= bmi < 30:
+        return 'Heart disease risk'
+    elif 30 <= bmi < 35:
+        return 'Higher risk of diabetes, heart disease'
+    else:
+        return 'Serious health condition risk'
+
+# Apply the function to create the 'Risk' column
+data['Risk'] = data['BMI'].apply(calculate_risk)
+
+# Display the updated DataFrame
+print(data)

@@ -1,0 +1,15 @@
+4.1
+import numpy as np
+
+num_array = np.array([1, 2, 3, 4, 5])
+
+sum_of_elements = np.sum(num_array)
+average_of_elements = np.mean(num_array)
+max_value = np.max(num_array)
+min_value = np.min(num_array)
+
+print("Generated NumPy array:", num_array)
+print("Sum of elements:", sum_of_elements)
+print("Average of elements:", average_of_elements)
+print("Maximum value:", max_value)
+print("Minimum value:", min_value)

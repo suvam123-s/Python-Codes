@@ -1,0 +1,29 @@
+4.2
+# Input array of numbers from the user
+num_list = []
+while len(num_list) < 10:
+    try:
+        num = float(input("Enter a number: "))
+        num_list.append(num)
+    except ValueError:
+        print("Please enter a valid number.")
+
+# Sort the array
+sorted_list = sorted(num_list)
+
+# Define slicing function
+def slice_array(arr, start, end):
+    if start < 0 or end > len(arr) or start >= end:
+        return []
+    return arr[start:end]
+
+# Perform slicing operations
+sliced_2_to_5 = slice_array(sorted_list, 2, 6)
+sliced_5_to_8 = slice_array(sorted_list, 5, 9)
+sliced_2_to_9 = slice_array(sorted_list, 2, 10)
+
+# Display results
+print("Sorted list:", sorted_list)
+print("Elements between indexes 2-5:", sliced_2_to_5)
+print("Elements between indexes 5-8:", sliced_5_to_8)
+print("Elements between indexes 2-9:", sliced_2_to_9)

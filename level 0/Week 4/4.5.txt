@@ -1,0 +1,49 @@
+4.5
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Greetings, human! Let us embark on this journey of data exploration.
+# First, we shall summon the data from the "weight_height.csv" using the power of Pandas.
+data = pd.read_csv("C:\Users\ACER\Desktop")
+
+# Prepare to unveil the scatterplots, painting a canvas of insights.
+plt.figure(figsize=(12, 8))
+
+# Weight vs Height
+plt.subplot(2, 3, 1)
+plt.scatter(data['Weight'], data['Height'], alpha=0.5)
+plt.title('Weight vs Height')
+plt.xlabel('Weight (lbs)')
+plt.ylabel('Height (inches)')
+
+# Age vs Weight
+plt.subplot(2, 3, 2)
+plt.scatter(data['Age'], data['Weight'], alpha=0.5)
+plt.title('Age vs Weight')
+plt.xlabel('Age')
+plt.ylabel('Weight (lbs)')
+
+# Height vs Age
+plt.subplot(2, 3, 3)
+plt.scatter(data['Height'], data['Age'], alpha=0.5)
+plt.title('Height vs Age')
+plt.xlabel('Height (inches)')
+plt.ylabel('Age')
+
+# Gender vs Height
+plt.subplot(2, 3, 4)
+plt.scatter(data['Gender'], data['Height'], alpha=0.5)
+plt.title('Gender vs Height')
+plt.xlabel('Gender')
+plt.ylabel('Height (inches)')
+
+# Gender vs Weight
+plt.subplot(2, 3, 5)
+plt.scatter(data['Gender'], data['Weight'], alpha=0.5)
+plt.title('Gender vs Weight')
+plt.xlabel('Gender')
+plt.ylabel('Weight (lbs)')
+
+# Behold! The masterpiece unfolds.
+plt.tight_layout()
+plt.show()
