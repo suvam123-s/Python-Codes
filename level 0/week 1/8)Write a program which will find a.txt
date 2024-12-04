@@ -1,0 +1,22 @@
+8)Write a program which will find all such numbers that are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included). The numbers should be printed on the output screen. Also try the same program by replacing 2000 and 3200 by taking input for them from the users.
+
+# Function to find and display numbers meeting the criteria
+def find_numbers(start, end):
+    numbers = []
+    for num in range(start, end + 1):
+        if num % 7 == 0 and num % 5 != 0:
+            numbers.append(num)
+    return numbers
+
+# Version with predefined range (2000 and 3200)
+result_predefined = find_numbers(2000, 3200)
+print(f'Numbers between 2000 and 3200 (inclusive) that are divisible by 7 but not a multiple of 5:')
+print(result_predefined)
+
+# Version with user input
+start_user = int(input('Enter the starting number: '))
+end_user = int(input('Enter the ending number: '))
+
+result_user_input = find_numbers(start_user, end_user)
+print(f'Numbers between {start_user} and {end_user} (inclusive) that are divisible by 7 but not a multiple of 5:')
+print(result_user_input)

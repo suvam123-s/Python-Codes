@@ -1,0 +1,27 @@
+1. Write a program to create a function which accepts 2 numbers and displays the sum, difference, product and the remainder values
+
+def calculate_operations(num1, num2):
+    # Calculate sum
+    sum_result = num1 + num2
+    # Calculate difference
+    diff_result = num1 - num2
+    # Calculate product
+    product_result = num1 * num2
+    # Calculate remainder
+    if num2 != 0:
+        remainder_result = num1 % num2
+    else:
+        remainder_result = "Division by zero is not defined."
+
+    # Display results
+    print(f"Sum: {sum_result}")
+    print(f"Difference: {diff_result}")
+    print(f"Product: {product_result}")
+    print(f"Remainder: {remainder_result}")
+
+# Input from the user
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+# Call the function to calculate and display operations
+calculate_operations(num1, num2)

@@ -1,0 +1,30 @@
+6.	Write a function word_frequency(sentence) that takes a sentence as input and returns a dictionary containing the frequency of each word in the sentence. [Hint: split the sentence into words and iterate to check the word frequency.]
+
+def word_frequency(sentence):
+    # Split the sentence into words
+    words = sentence.split()
+
+    # Initialize an empty dictionary to store word frequencies
+    word_freq_dict = {}
+
+    # Iterate through the words and update the dictionary
+    for word in words:
+        # Convert the word to lowercase to handle case sensitivity
+        lowercase_word = word.lower()
+
+        # Update the dictionary with the word frequency
+        if lowercase_word in word_freq_dict:
+            word_freq_dict[lowercase_word] += 1
+        else:
+            word_freq_dict[lowercase_word] = 1
+
+    return word_freq_dict
+
+# Example usage:
+user_sentence = input("Enter a sentence: ")
+result = word_frequency(user_sentence)
+
+# Display the word frequency dictionary
+print("Word Frequency Dictionary:")
+for word, frequency in result.items():
+    print(f"{word}: {frequency}")

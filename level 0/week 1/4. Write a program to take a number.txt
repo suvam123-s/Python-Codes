@@ -1,0 +1,46 @@
+4. Write a program to take a number input from the user and display the result of some mathematical calculations as mentioned below.
+I.	Square of the number
+II.	Square root of the number
+III.	Exponent value with the number
+IV.	Log Base 10 of the number
+V.	Calculate the power 3, 4 and 5 of the number.
+
+import math
+
+# Function to perform mathematical calculations and display the results
+def calculate_and_display_results(number):
+    # I. Square of the number
+    square_result = number ** 2
+    print(f'I. Square of {number}: {square_result}')
+
+    # II. Square root of the number
+    if number >= 0:
+        sqrt_result = math.sqrt(number)
+        print(f'II. Square root of {number}: {sqrt_result}')
+    else:
+        print('II. Square root is undefined for negative numbers.')
+
+    # III. Exponent value with the number
+    exp_result = math.exp(number)
+    print(f'III. Exponent value with {number}: {exp_result}')
+
+    # IV. Log Base 10 of the number
+    if number > 0:
+        log_result = math.log10(number)
+        print(f'IV. Log Base 10 of {number}: {log_result}')
+    else:
+        print('IV. Log is undefined for non-positive numbers.')
+
+    # V. Calculate the power 3, 4, and 5 of the number
+    power_3_result = number ** 3
+    power_4_result = number ** 4
+    power_5_result = number ** 5
+    print(f'V. Power 3 of {number}: {power_3_result}')
+    print(f'   Power 4 of {number}: {power_4_result}')
+    print(f'   Power 5 of {number}: {power_5_result}')
+
+# Input from the user
+user_number = float(input('Enter a number: '))
+
+# Call the function to perform calculations and display results
+calculate_and_display_results(user_number)

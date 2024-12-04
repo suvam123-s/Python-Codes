@@ -1,0 +1,50 @@
+ Write a program to input 2 numbers from the users and display the output of below mentioned operations in a proper format.
+I.	Addition
+II.	Subtraction
+III.	Multiplication
+IV.	Division
+V.	Modulo division
+VI.	Floor division
+
+
+# Function to perform the operations and display the results
+def perform_operations(num1, num2):
+    # Addition
+    add_result = num1 + num2
+    print(f'I. Addition: {num1} + {num2} = {add_result}')
+
+    # Subtraction
+    sub_result = num1 - num2
+    print(f'II. Subtraction: {num1} - {num2} = {sub_result}')
+
+    # Multiplication
+    mul_result = num1 * num2
+    print(f'III. Multiplication: {num1} * {num2} = {mul_result}')
+
+    # Division
+    if num2 != 0:
+        div_result = num1 / num2
+        print(f'IV. Division: {num1} / {num2} = {div_result}')
+    else:
+        print('IV. Division: Cannot divide by zero.')
+
+    # Modulo Division
+    if num2 != 0:
+        mod_result = num1 % num2
+        print(f'V. Modulo Division: {num1} % {num2} = {mod_result}')
+    else:
+        print('V. Modulo Division: Cannot divide by zero.')
+
+    # Floor Division
+    if num2 != 0:
+        floor_div_result = num1 // num2
+        print(f'VI. Floor Division: {num1} // {num2} = {floor_div_result}')
+    else:
+        print('VI. Floor Division: Cannot divide by zero.')
+
+# Input from the user
+num1 = float(input('Enter the first number: '))
+num2 = float(input('Enter the second number: '))
+
+# Call the function to perform operations and display results
+perform_operations(num1, num2)

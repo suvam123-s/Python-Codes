@@ -1,0 +1,44 @@
+10. Write a program to find the sum of odd and even numbers input from the user. The program should take an input continuously until the user wants to exit the program. The program should be menu driven where the user should be asked whether they want to continue with the program or not.
+
+# Function to calculate the sum of odd and even numbers
+def calculate_sum_odd_even(numbers):
+    sum_odd = sum(num for num in numbers if num % 2 != 0)
+    sum_even = sum(num for num in numbers if num % 2 == 0)
+    return sum_odd, sum_even
+
+# Function to display the menu and get user choice
+def display_menu():
+    print("\nMenu:")
+    print("1. Enter a number")
+    print("2. Calculate sum of odd and even numbers")
+    print("3. Exit")
+    choice = input("Enter your choice (1/2/3): ")
+    return choice
+
+# Main program
+numbers_list = []
+
+while True:
+    choice = display_menu()
+
+    if choice == '1':
+        try:
+            number = int(input('Enter a number: '))
+            numbers_list.append(number)
+        except ValueError:
+            print('Invalid input. Please enter a valid number.')
+
+    elif choice == '2':
+        if not numbers_list:
+            print('No numbers entered yet. Please enter some numbers first.')
+        else:
+            sum_odd, sum_even = calculate_sum_odd_even(numbers_list)
+            print(f'Sum of odd numbers: {sum_odd}')
+            print(f'Sum of even numbers: {sum_even}')
+
+    elif choice == '3':
+        print('Exiting the program. Goodbye!')
+        break
+
+    else:
+        print('Invalid choice. Please enter a valid option (1, 2, or 3).')

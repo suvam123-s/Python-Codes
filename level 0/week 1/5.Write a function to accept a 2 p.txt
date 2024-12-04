@@ -1,0 +1,21 @@
+5.	Write a function to accept a 2 parameters, one is the list of cities and another is the city that the user wants to search. The function should search the city in the list of cities and return the index of the list where the city is available. If the city is not available, the program should return a proper message
+
+# Function to search for a city in a list
+def search_city(city_list, search_city):
+    try:
+        index = city_list.index(search_city)
+        return f'The city {search_city} is found at index {index}.'
+    except ValueError:
+        return f'The city {search_city} is not found in the list.'
+
+# Input from the user
+cities = input('Enter a list of cities (comma-separated): ')
+cities_list = cities.split(',')
+
+search_city_name = input('Enter the city you want to search: ')
+
+# Call the function to search for the city
+search_result = search_city(cities_list, search_city_name)
+
+# Display the result
+print(search_result)

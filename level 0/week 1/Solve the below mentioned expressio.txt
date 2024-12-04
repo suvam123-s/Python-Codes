@@ -1,0 +1,26 @@
+Solve the below mentioned expressions in a python program. Feel free to take input of the required variables to solve the expressions. 
+I.	a2 + 2ab + b2
+II.	a5 + 2abc + b3 + c4
+III.	a7 + 5a3b2c6 + b7
+
+# Function to solve the expressions and display the results
+def solve_expressions(a, b, c):
+    # I. a^2 + 2ab + b^2
+    expression_1_result = a**2 + 2*a*b + b**2
+    print(f'I. Result of a^2 + 2ab + b^2: {expression_1_result}')
+
+    # II. a^5 + 2abc + b^3 + c^4
+    expression_2_result = a**5 + 2*a*b*c + b**3 + c**4
+    print(f'II. Result of a^5 + 2abc + b^3 + c^4: {expression_2_result}')
+
+    # III. a^7 + 5a^3b^2c^6 + b^7
+    expression_3_result = a**7 + 5*a**3*b**2*c**6 + b**7
+    print(f'III. Result of a^7 + 5a^3b^2c^6 + b^7: {expression_3_result}')
+
+# Input from the user
+a = float(input('Enter the value of a: '))
+b = float(input('Enter the value of b: '))
+c = float(input('Enter the value of c: '))
+
+# Call the function to solve expressions and display results
+solve_expressions(a, b, c)

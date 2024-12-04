@@ -1,0 +1,16 @@
+4.	Write a function to accept a list of names and return the sorted order of names back. 
+
+# Function to return sorted order of names
+def sort_names(name_list):
+    sorted_names = sorted(name_list)
+    return sorted_names
+
+# Input from the user
+names = input('Enter a list of names (comma-separated): ')
+names_list = names.split(',')
+
+# Call the function to get the sorted order of names
+sorted_names_result = sort_names(names_list)
+
+# Display the sorted order of names
+print(f'Sorted Order of Names: {sorted_names_result}')

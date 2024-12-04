@@ -1,0 +1,51 @@
+11. Write a program to create a number guessing game for the user. The program should ask the user to input a number. The program specifications are as mentioned below.
+I.	The program should generate a random number for the answer.
+II.	The program should prompt the user for a number input.
+III.	The program should provide the feedback to the user after each guesses (e.g. “Too high”, “Too low” or “Correct number”).
+IV.	The program should check the user input for 5 times and allow the users to guess for at most 5 times if their input don’t match the answer number.
+V.	If the user is not able to guess the answer within 5 times, the program should display “Game Over” message and exit.
+
+import random
+
+# Function to generate a random number
+def generate_random_number():
+    return random.randint(1, 100)
+
+# Function to check if the user's guess is correct
+def check_guess(user_guess, answer):
+    if user_guess < answer:
+        return "Too low"
+    elif user_guess > answer:
+        return "Too high"
+    else:
+        return "Correct number"
+
+# Main game loop
+def number_guessing_game():
+    answer_number = generate_random_number()
+    attempts_left = 5
+
+    print("Welcome to the Number Guessing Game!")
+
+    for _ in range(5):
+        try:
+            user_input = int(input("Guess the number (between 1 and 100): "))
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
+
+        result = check_guess(user_input, answer_number)
+        print(result)
+
+        if result == "Correct number":
+            print(f"Congratulations! You guessed the correct number {answer_number}.")
+            break
+
+        attempts_left -= 1
+        print(f"Attempts left: {attempts_left}")
+
+    if attempts_left == 0:
+        print(f"Game Over! You couldn't guess the correct number {answer_number} within 5 attempts.")
+
+# Run the game
+number_guessing_game()

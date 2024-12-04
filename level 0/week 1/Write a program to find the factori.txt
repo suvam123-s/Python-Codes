@@ -1,0 +1,25 @@
+ Write a program to find the factorial of any number taken as an input from the user. Try to validate the user input whether it is a number or not and then only perform the operation. In case of other than number as an input, display an error as “Not a number.”. [Hint: few available functions to identify the input is a number or not are ‘isdigit(), isnumeric(), et
+
+# Function to calculate factorial of a number
+def calculate_factorial(num):
+    if num == 0 or num == 1:
+        return 1
+    else:
+        return num * calculate_factorial(num - 1)
+
+# Function to validate user input as a number
+def validate_input(user_input):
+    if user_input.isdigit():
+        return True
+    else:
+        return False
+
+# Input from the user with validation
+user_input = input('Enter a number to find its factorial: ')
+
+if validate_input(user_input):
+    number = int(user_input)
+    result = calculate_factorial(number)
+    print(f'The factorial of {number} is: {result}')
+else:
+    print('Error: Not a number.')

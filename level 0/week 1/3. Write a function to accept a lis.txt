@@ -1,0 +1,27 @@
+3. Write a function to accept a list of numbers and print the occurrence of each number. The function should be tested well in the program by calling and sending various list of numbers.
+
+# Function to print the occurrence of each number in a list
+def print_occurrence(numbers):
+    occurrence_dict = {}
+
+    for num in numbers:
+        if num in occurrence_dict:
+            occurrence_dict[num] += 1
+        else:
+            occurrence_dict[num] = 1
+
+    print("Number Occurrence:")
+    for num, count in occurrence_dict.items():
+        print(f"{num}: {count} times")
+
+# Test the function with various lists of numbers
+numbers_list1 = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 2, 2, 3, 3, 3]
+numbers_list2 = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1, 5, 4, 3, 2, 1]
+numbers_list3 = [1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5]
+
+# Call the function with different lists
+print_occurrence(numbers_list1)
+print("\n")
+print_occurrence(numbers_list2)
+print("\n")
+print_occurrence(numbers_list3)

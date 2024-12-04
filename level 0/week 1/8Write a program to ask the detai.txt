@@ -1,0 +1,32 @@
+8.	Write a program to ask the details of 5 books (title, author, ISBN, cost), add them in the dictionary and print them. 
+
+# Function to input book details and return a dictionary
+def input_book_details():
+    books_dict = []
+
+    for _ in range(5):
+        title = input('Enter the title of the book: ')
+        author = input('Enter the author of the book: ')
+        isbn = input('Enter the ISBN of the book: ')
+        cost = float(input('Enter the cost of the book: '))
+
+        book_details = {
+            'Title': title,
+            'Author': author,
+            'ISBN': isbn,
+            'Cost': cost
+        }
+
+        books_dict.append(book_details)
+
+    return books_dict
+
+# Call the function to input book details
+books_list = input_book_details()
+
+# Display the details of each book
+print("\nDetails of Books:")
+for i, book in enumerate(books_list, start=1):
+    print(f"\nBook {i}:")
+    for key, value in book.items():
+        print(f"{key}: {value}")

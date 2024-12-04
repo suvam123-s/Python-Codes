@@ -1,0 +1,38 @@
+9.	 Create a program to ask a user to give continuous input of numbers until they like. The program should keep on segregating the user input numbers into even and odd lists separately. Once the user completes the input and opts for exiting the program, the program should display the separate list of even and odd lists in a proper format.
+
+# Function to segregate numbers into even and odd lists
+def segregate_even_odd_numbers(user_input):
+    even_numbers = []
+    odd_numbers = []
+
+    for num in user_input:
+        if num % 2 == 0:
+            even_numbers.append(num)
+        else:
+            odd_numbers.append(num)
+
+    return even_numbers, odd_numbers
+
+# Main program
+user_numbers = []
+
+while True:
+    try:
+        user_input = input("Enter a number (type 'exit' to stop): ")
+
+        # Check if the user wants to exit
+        if user_input.lower() == 'exit':
+            break
+
+        # Convert the input to an integer and add it to the list
+        num = int(user_input)
+        user_numbers.append(num)
+    except ValueError:
+        print("Invalid input. Please enter a valid number or 'exit' to stop.")
+
+# Call the function to segregate even and odd numbers
+even_list, odd_list = segregate_even_odd_numbers(user_numbers)
+
+# Display the results
+print("\nEven Numbers List:", even_list)
+print("Odd Numbers List:", odd_list)

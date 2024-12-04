@@ -1,0 +1,17 @@
+2. Write a program to create a function which will accept a parameter and return the factorial of the number. The output should be displayed in a proper format.
+
+# Function to calculate factorial of a number
+def calculate_factorial(num):
+    if num == 0 or num == 1:
+        return 1
+    else:
+        return num * calculate_factorial(num - 1)
+
+# Input from the user
+user_number = int(input('Enter a number to find its factorial: '))
+
+# Call the function to calculate factorial
+result = calculate_factorial(user_number)
+
+# Display the result in a proper format
+print(f'The factorial of {user_number} is: {result}')

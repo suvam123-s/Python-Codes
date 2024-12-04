@@ -1,0 +1,55 @@
+10.	Write a program to generate a card guessing game for the users in an interesting way. The card should have property such as name and value (e.g. ace 10). Specifications are as mentioned below.
+I.	The program should have a list of card values like 2, 3, 4,…., Jack, Queen, King, Ace
+II.	The program should have a list of card suits like heart, diamond, club, spades.
+III.	The program should randomly pick up a number and a suit and keep as an answer in a separate list.
+IV.	The program should ask the player to guess the card value and the suit.
+V.	The program should check the player guessed value with the computer answer value. If both the parts don’t match, the program should show a broken heart and game over to the player. If any one of the part of answer matches, the program should show a smily face to the player. If both the guesses of the player matches with the program answer, the program should show a heart and a smily face to the user
+
+import random
+
+# Function to generate a random card
+def generate_random_card():
+    card_values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
+    card_suits = ['Heart', 'Diamond', 'Club', 'Spades']
+
+    # Randomly pick a card value and suit
+    random_value = random.choice(card_values)
+    random_suit = random.choice(card_suits)
+
+    # Create the answer as a tuple (value, suit)
+    answer = (random_value, random_suit)
+
+    return answer
+
+# Function to check the player's guess against the computer's answer
+def check_guess(player_guess, computer_answer):
+    if player_guess == computer_answer:
+        return "Congratulations! You guessed both the value and the suit correctly!"
+    elif player_guess[0] == computer_answer[0] or player_guess[1] == computer_answer[1]:
+        return "Close! At least one part of your guess is correct."
+    else:
+        return "Game Over! Your guess didn't match the computer's answer. Better luck next time!"
+
+# Main game loop
+def card_guessing_game():
+    # Generate a random card as the computer's answer
+    computer_answer = generate_random_card()
+
+    print("Welcome to the Card Guessing Game!")
+
+    # Get the player's guess for value and suit
+    player_value = input('Guess the card value: ')
+    player_suit = input('Guess the card suit: ')
+
+    # Convert the player's guess to title case (e.g., 'jack' to 'Jack')
+    player_guess = (player_value.title(), player_suit.title())
+
+    # Check the player's guess against the computer's answer
+    result = check_guess(player_guess, computer_answer)
+
+    # Display the result
+    print(result)
+
+# Run the game
+card_guessing_game()
+
