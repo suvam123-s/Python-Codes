@@ -1,0 +1,56 @@
+3.2
+import csv
+
+# Function to get student details from the user
+def get_student_details():
+    # Ask the user for the student's name
+    name = input("Please enter the student's name: ")
+    # Ask the user for the student's ID
+    id = input("Please enter the student's ID: ")
+    # Ask the user for the student's course
+    course = input("Please enter the student's course: ")
+    # Ask the user for the student's level
+    level = input("Please enter the student's level: ")
+    # Ask the user for the student's section
+    section = input("Please enter the student's section: ")
+    # Return the student details as a list
+    return [name, id, course, level, section]
+
+# Function to append a student's details to a CSV file
+def append_to_csv(student_details):
+    # Open the file in append mode
+    with open("students.csv", "a", newline="") as csv_file:
+        # Create a CSV writer object
+        writer = csv.writer(csv_file)
+        # Write the student's details to the CSV file
+        writer.writerow(student_details)
+
+# Function to run the program
+def main():
+    # Show the user a menu
+    while True:
+        print("1. Add a student")
+        print("2. Exit")
+        # Get the user's choice
+        choice = input("Please enter your choice: ")
+        # If the user chose to add a student
+        if choice == "1":
+            # Get the student's details
+            student_details = get_student_details()
+            # Append the student's details to the CSV file
+            append_to_csv(student_details)
+            # Print a success message
+            print("Student added successfully!")
+        # If the user chose to exit
+        elif choice == "2":
+            # Print a goodbye message
+            print("Exiting...")
+            # Exit the program
+            break
+        # If the user entered an invalid choice
+        else:
+            # Print an error message
+            print("Invalid choice. Please try again.")
+# Run the main function
+if __name__ == '__main__':
+    main()

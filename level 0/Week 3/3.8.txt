@@ -1,0 +1,83 @@
+3.8
+class Library:
+    """Manages a list of books."""
+
+    def __init__(self):
+        """Initializes the Library object with an empty list of books."""
+        self.books = []
+
+    def load_books(self):
+        """Loads books from a file into the books list."""
+        try:
+            with open('books.txt', 'r') as file:
+                self.books = [book.strip().split(',') for book in file.readlines()]
+        except FileNotFoundError:
+            self.books = []
+
+    def save_books(self):
+        """Saves the books list to a file."""
+        with open('books.txt', 'w') as file:
+            for book in self.books:
+                file.write(','.join(book) + '\n')
+
+    def add_book(self, title, author):
+        """Adds a new book to the books list."""
+        self.books.append([title, author, 'available'])
+        self.save_books()
+
+    def issue_book(self, title):
+        """Marks a book as issued if it is available."""
+        for book in self.books:
+            if book[0].lower() == title.lower() and book[2] == 'available':
+                book[2] = 'issued'
+                self.save_books()
+                return True
+        return False
+
+    def return_book(self, title):
+        """Marks a book as available if it is issued."""
+        for book in self.books:
+            if book[0].lower() == title.lower() and book[2] == 'issued':
+                book[2] = 'available'
+                self.save_books()
+                return True
+        return False
+
+    def search_book(self, title):
+        """Searches for a book in the books list."""
+        for book in self.books:
+            if book[0].lower() == title.lower():
+                return book
+        return None
+
+if __name__ == '__main__':
+    lib = Library()
+    while True:
+        print('1. Add book')
+        print('2. Issue book')
+        print('3. Return book')
+        print('4. Search book')
+        choice = int(input('Enter option: '))
+        if choice == 1:
+            title = input('Enter book title: ')
+            author = input('Enter author: ')
+            lib.add_book(title, author)
+        elif choice == 2:
+            title = input('Enter book title to issue: ')
+            if lib.issue_book(title):
+                print('Book issued.')
+            else:
+                print('Book not available.')
+        elif choice == 3:
+            title = input('Enter book title to return: ')
+            if lib.return_book(title):
+                print('Book returned.')
+            else:
+                print('Book not found.')
+        elif choice == 4:
+            title = input('Enter book title to search: ')
+            book = lib.search_book(title)
+            if book:
+                print(f'Title: {book[0]}, Author: {book[1]}, Status: {book[2]}')
+            else:
+                print('Book not found.')

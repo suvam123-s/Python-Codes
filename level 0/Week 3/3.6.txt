@@ -1,0 +1,46 @@
+3.6
+class Recipe:
+    def __init__(self, recipe_id, name, ingredients, description):
+        self.recipe_id = recipe_id
+        self.name = name
+        self.ingredients = ingredients
+        self.description = description
+
+    def display_recipe(self):
+        """Method to display recipe details."""
+        print("Recipe ID:", self.recipe_id)
+        print("Name:", self.name)
+        print("Ingredients:", ", ".join(self.ingredients))
+        print("Description:", self.description)
+
+class RecipeBook:
+    def __init__(self):
+        self.recipes = []
+
+    def add_recipe(self, recipe):
+        """Method to add a recipe to the recipe book."""
+        self.recipes.append(recipe)
+
+    def display_recipes(self):
+        """Method to display all recipes in the recipe book."""
+        print("Recipes in Recipe Book: ")
+        for recipe in self.recipes:
+            recipe.display_recipe()
+        print()  # Add a new line for separation
+
+def main():
+    # Creating some sample recipes
+    recipe1 = Recipe(1, "Pasta Carbonara", ["spaghetti", "bacon", "eggs", "parmesan cheese", "black pepper"], "Classic Italian pasta dish")
+    recipe2 = Recipe(2, "Chocolate Cake", ["flour", "sugar", "cocoa powder", "butter", "eggs", "vanilla extract"], "Delicious chocolate dessert")
+    recipe3 = Recipe(3, "Vegetable Stir-fry", ["bell peppers", "broccoli", "carrots", "onions", "soy sauce", "garlic"], "Healthy and flavorful dish")
+
+    # Creating a Recipe Book and adding recipes
+    recipe_book = RecipeBook()
+    recipe_book.add_recipe(recipe1)
+    recipe_book.add_recipe(recipe2)
+    recipe_book.add_recipe(recipe3)
+
+    # Displaying all recipes in the recipe book
+    recipe_book.display_recipes()
+    if __name__ == "__main__":
+        main()

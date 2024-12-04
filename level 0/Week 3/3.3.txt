@@ -1,0 +1,49 @@
+3.3
+import datetime
+
+def perform_operations(numbers):
+    "Function to perform addition, subtraction, multiplication, and division."
+    addition = sum(numbers)
+    subtraction = numbers[0] - sum(numbers[1:])
+    multiplication = 1
+    for num in numbers:
+        multiplication *= num
+    division = numbers[0]
+    for num in numbers[1:]:
+        division /= num
+    return addition, subtraction, multiplication, division
+
+def write_to_file(filename, data):
+    "Function to write data to a file."
+    with open(filename, 'a') as file:
+        file.write(data)
+
+def main():
+    while True:
+        numbers = input("Enter a list of numbers separated by spaces (e.g., 12 3): ").split()
+        numbers = [float(num) for num in numbers]
+        # Performing operations
+        addition, subtraction, multiplication, division = perform_operations(numbers)
+        # Getting current date and time
+        current_datetime = datetime.datetime.now()
+        # Constructing output string
+        output = f"Date and Time: {current_datetime}\n"
+        output += f"Numbers: {numbers}\n"
+        output += f"Addition: {addition}\n"
+        output += f"Subtraction: {subtraction}\n"
+        output += f"Multiplication: {multiplication}\n"
+        output += f"Division: {division}\n"
+        output += "\n"
+        write_to_file("operations_log.txt", output)
+
+        choice = input("Do you want to perform more operations? (yes/no): ")
+        if choice.lower() != 'yes':
+            break
+
+    # Displaying contents of the file
+    with open("operations_log.txt", 'r') as file:
+        print("\nOperations Log: ")
+        print(file.read())
+
+if _name_ == "_main_":
+    main()

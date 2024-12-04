@@ -1,0 +1,5 @@
+3.1
+﻿
+
+f=open("C:/Users/ACER/Desktop/student.csv","r")
+print (f.read())

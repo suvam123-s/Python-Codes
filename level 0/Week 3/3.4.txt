@@ -1,0 +1,23 @@
+3.4
+def copy_file(input_file, output_file):
+    try:
+        with open(input_file, 'r') as input_f:
+            content = input_f.read()
+    except FileNotFoundError:
+        print(f"Error: Input file '{input_file}' not found.")
+    else:
+        try:
+            with open(output_file, 'x') as output_f:
+                output_f.write(content)
+        except FileExistsError:
+            print(f"Error: Output file '{output_file}' already exists.")
+        else:
+            print(f"File '{input_file}' successfully copied to '{output_file}'.")
+
+def main():
+    input_file = input("Enter the input file name: ")
+    output_file = input("Enter the output file name: ")
+    copy_file(input_file, output_file)
+
+if __name__ == "__main__":
+    main()

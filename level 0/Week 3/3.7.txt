@@ -1,0 +1,90 @@
+3.7
+from ast import Break
+
+
+class Employee:
+    def __init__(self, empid, name, address, contact_number, spouse_name, number_of_child, salary):
+        self.empid = empid
+        self.name = name
+        self.address = address
+        self.contact_number = contact_number
+        self.spouse_name = spouse_name
+        self.number_of_child = number_of_child
+        self.salary = salary
+
+    def display_details(self):
+        """Method to display employee details."""
+        print("Employee ID:", self.empid)
+        print("Name:", self.name)
+        print("Address:", self.address)
+        print("Contact Number:", self.contact_number)
+        print("Spouse Name:", self.spouse_name)
+        print("Number of Children:", self.number_of_child)
+        print("Salary:", self.salary)
+
+    def write_to_csv(file_name, employees):
+        """Function to write employee details to a CSV file."""
+        try:
+            with open(file_name, 'w', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow(["Employee ID", "Name", "Address", "Contact Number", "Spouse Name", "Number of Children", "Salary"])
+                for employee in employees:
+                    writer.writerow([employee.empid, employee.name, employee.address, employee.contact_number, employee.spouse_name, employee.number_of_child, employee.salary])
+            print("Employee details written to employees.csv successfully.")
+        except Exception as e:
+            print("Error occurred :", str(e))
+            
+     while True:
+     try:
+        empid = input("Enter employee ID: ")
+        name = input("Enter employee name: ")
+        address = input("Enter employee address: ")
+        contact_number = input("Enter employee contact number: ")
+        spouse_name = input("Enter spouse's name: ")
+        number_of_child = int(input("Enter number of children: "))
+        salary = float(input("Enter employee salary: "))
+        employee = Employee(empid, name, address, contact_number, spouse_name, number_of_child, salary)
+        employees.append(employee)
+        choice = input("Do you want to add another employee? (yes/no): ")
+        if choice.lower() != 'yes':
+            Break
+    except ValueError:
+        print("Please enter a valid number for number of children.")
+
+# Write employee details to CSV file
+write_to_csv("employees.csv", employees)
+
+# Display employee details
+for employee in employees:
+    print("\nEmployee Details: ")
+    employee.display_details()
+
+if __name__ == '__main__':
+    employees = []
+    while True:
+        try:
+            empid = input("Enter employee ID: ")
+            name = input("Enter employee name: ")
+            address = input("Enter employee address: ")
+            contact_number = input("Enter employee contact number: ")
+            spouse_name = input("Enter spouse's name: ")
+            number_of_child = int(input("Enter number of children: "))
+            salary = float(input("Enter employee salary: "))
+            employee = Employee(empid, name, address, contact_number, spouse_name, number_of_child, salary)
+            employees.append(employee)
+            choice = input("Do you want to add another employee? (yes/no): ")
+            if choice.lower() != 'yes':
+                break
+        except ValueError:
+            print("Please enter a valid number for number of children.")
+
+    # Write employee details to CSV file
+    write_to_csv("employees.csv", employees)
+
+    # Display employee details
+    for employee in employees:
+        print("\nEmployee Details: ")
+        employee.display_details()
+    if __name__ == "__main__":
+        main()
+        
