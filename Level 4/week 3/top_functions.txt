@@ -1,0 +1,227 @@
+# 1. abs() - Get the absolute value
+print(abs(-5))  # Output: 5
+
+# 2. all() - Check if all items in an iterable are True
+print(all([True, 1, "yes"]))  # Output: True
+
+# 3. any() - Check if any item in an iterable is True
+print(any([False, 0, "hello"]))  # Output: True
+
+# 4. ascii() - Return a readable version of an object
+print(ascii("Spåñish"))  # Output: 'Sp\xe5\xf1ish'
+
+# 5. bin() - Convert an integer to binary
+print(bin(10))  # Output: '0b1010'
+
+# 6. bool() - Get the boolean value
+print(bool(0))  # Output: False
+
+# 7. breakpoint() - Insert a debugging breakpoint
+breakpoint()  # Debugger starts here
+
+# 8. bytearray() - Create a mutable byte array
+print(bytearray(5))  # Output: bytearray(b'\x00\x00\x00\x00\x00')
+
+# 9. bytes() - Create an immutable byte object
+print(bytes(5))  # Output: b'\x00\x00\x00\x00\x00'
+
+# 10. callable() - Check if an object is callable
+print(callable(print))  # Output: True
+
+# 11. chr() - Get the character for an ASCII code
+print(chr(97))  # Output: 'a'
+
+# 12. classmethod() - Define a class method
+class MyClass:
+    @classmethod
+    def my_method(cls):
+        return "Hello"
+print(MyClass.my_method())  # Output: 'Hello'
+
+# 13. compile() - Compile source code into a code object
+code = compile('print(5)', '<string>', 'exec')
+exec(code)  # Output: 5
+
+# 14. complex() - Create a complex number
+print(complex(2, 3))  # Output: (2+3j)
+
+# 15. delattr() - Delete an attribute
+class Person:
+    name = "Alice"
+delattr(Person, 'name')
+
+# 16. dict() - Create a dictionary
+print(dict(a=1, b=2))  # Output: {'a': 1, 'b': 2}
+
+# 17. dir() - List attributes of an object
+print(dir([]))  # Output: [list of methods for lists]
+
+# 18. divmod() - Get quotient and remainder
+print(divmod(9, 4))  # Output: (2, 1)
+
+# 19. enumerate() - Enumerate over a list with indexes
+for i, v in enumerate(['a', 'b']):
+    print(i, v)
+
+# 20. eval() - Evaluate a string expression
+print(eval('2 + 3'))  # Output: 5
+
+# 21. exec() - Execute Python code dynamically
+exec('print("Hello")')  # Output: Hello
+
+# 22. filter() - Filter items in an iterable
+print(list(filter(lambda x: x > 2, [1, 2, 3, 4])))  # Output: [3, 4]
+
+# 23. float() - Convert to float
+print(float("5.5"))  # Output: 5.5
+
+# 24. format() - Format a value
+print(format(12345, ",d"))  # Output: '12,345'
+
+# 25. frozenset() - Create an immutable set
+print(frozenset([1, 2, 3]))  # Output: frozenset({1, 2, 3})
+
+# 26. getattr() - Get an attribute
+class Dog:
+    sound = "bark"
+print(getattr(Dog, 'sound'))  # Output: 'bark'
+
+# 27. globals() - Get global variables
+print(globals())
+
+# 28. hasattr() - Check if an attribute exists
+print(hasattr(Dog, 'sound'))  # Output: True
+
+# 29. hash() - Get the hash value of an object
+print(hash("hello"))  # Output: A hash value
+
+# 30. help() - Show help documentation
+help(len)  # Output: Documentation on 'len'
+
+# 31. hex() - Convert an integer to hexadecimal
+print(hex(255))  # Output: '0xff'
+
+# 32. id() - Get the ID of an object
+print(id(5))
+
+# 33. input() - Take user input
+# name = input("Enter your name: ")
+
+# 34. int() - Convert to integer
+print(int("5"))  # Output: 5
+
+# 35. isinstance() - Check instance type
+print(isinstance(5, int))  # Output: True
+
+# 36. issubclass() - Check subclass relation
+print(issubclass(bool, int))  # Output: True
+
+# 37. iter() - Get iterator
+it = iter([1, 2, 3])
+print(next(it))  # Output: 1
+
+# 38. len() - Get length of an object
+print(len("hello"))  # Output: 5
+
+# 39. list() - Create a list
+print(list("abc"))  # Output: ['a', 'b', 'c']
+
+# 40. locals() - Get local variables
+def func():
+    x = 5
+    print(locals())
+func()  # Output: {'x': 5}
+
+# 41. map() - Map a function to all items
+print(list(map(str.upper, ['a', 'b', 'c'])))  # Output: ['A', 'B', 'C']
+
+# 42. max() - Get maximum value
+print(max([1, 2, 3]))  # Output: 3
+
+# 43. memoryview() - Get memory view of a bytes object
+mv = memoryview(b"hello")
+print(mv[0])  # Output: 104
+
+# 44. min() - Get minimum value
+print(min([1, 2, 3]))  # Output: 1
+
+# 45. next() - Get next item from iterator
+print(next(it))  # Output: 2
+
+# 46. object() - Create a new object
+print(object())  # Output: <object object at ...>
+
+# 47. oct() - Convert an integer to octal
+print(oct(8))  # Output: '0o10'
+
+# 48. open() - Open a file
+# f = open("test.txt", "w")
+
+# 49. ord() - Get ASCII code of a character
+print(ord('a'))  # Output: 97
+
+# 50. pow() - Get power of a number
+print(pow(2, 3))  # Output: 8
+
+# 51. print() - Print to console
+print("Hello, World!")  # Output: Hello, World!
+
+# 52. property() - Define a property
+class Car:
+    def __init__(self, color):
+        self._color = color
+    @property
+    def color(self):
+        return self._color
+c = Car("Red")
+print(c.color)  # Output: Red
+
+# 53. range() - Generate a range of numbers
+print(list(range(5)))  # Output: [0, 1, 2, 3, 4]
+
+# 54. repr() - Get string representation
+print(repr("hello"))  # Output: "'hello'"
+
+# 55. reversed() - Get reversed iterator
+print(list(reversed([1, 2, 3])))  # Output: [3, 2, 1]
+
+# 56. round() - Round a number
+print(round(5.678, 2))  # Output: 5.68
+
+# 57. set() - Create a set
+print(set([1, 2, 2, 3]))  # Output: {1, 2, 3}
+
+# 58. setattr() - Set an attribute
+setattr(Dog, 'age', 5)
+print(Dog.age)  # Output: 5
+
+# 59. slice() - Create a slice
+print([1, 2, 3, 4][slice(1, 3)])  # Output: [2, 3]
+
+# 60. sorted() - Sort items
+print(sorted([3, 1, 2]))  # Output: [1, 2, 3]
+
+# 61. staticmethod() - Define a static method
+class Animal:
+    @staticmethod
+    def sound():
+        return "Roar"
+print(Animal.sound())  # Output: Roar
+
+# 62. str() - Convert to string
+print(str(123))  # Output: '123'
+
+# 63. sum() - Sum items
+print(sum([1, 2, 3]))  # Output: 6
+
+# 64. super() - Access superclass method
+class A:
+    def hello(self):
+        return "Hello from A"
+class B(A):
+    def hello(self):
+        return super().hello() + " and B"
+print(B().hello())  # Output: Hello from A and B
+
+# 65. tuple() - Create a tuple
+print(tuple([1, 2, 3]))  #
