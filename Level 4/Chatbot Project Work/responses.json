@@ -1,0 +1,44 @@
+{
+    "keywords": {
+      "coffee": "The campus coffee bar is open from 8 AM to 8 PM.",
+      "fine":"thats nice , How may i Help You",
+      "library": "The library is open from 9 AM to 10 PM.",
+      "admissions": "Admissions office is open from 10 AM to 4 PM, Monday to Friday.",
+      "sports": "The sports center is open daily from 6 AM to 10 PM.",
+      "cafeteria": "The cafeteria serves food from 7 AM to 3 PM.",
+      "hi":"Hellow i am Zyrix ai assistance , How are you today?",
+      "events": "Upcoming events can be found on the university's website or at the student center.",
+      "parking": "Parking lots are open 24/7. Permits are required from 8 AM to 6 PM.",
+      "gym": "The gym is available from 5 AM to 11 PM for students with a membership.",
+      "workshops": "Workshops are held throughout the semester. Check the bulletin board for the schedule.",
+      "how are you": "I'm doing great, thank you for asking! How can I assist you today?",
+      "college": "Leeds Backet University is known for its diverse academic programs, cutting-edge research, and supportive student community.",
+      "course": "Our courses range from business administration to computer science, engineering, and more. You can find course details on the student portal.",
+      "degree programs": "We offer undergraduate, graduate, and professional degree programs. Check the admissions website for more information.",
+      "campus": "The campus has various academic buildings, sports facilities, a library, and student centers for social and academic activities.",
+      "class schedule": "Class schedules can be accessed via the student portal or through your department's website.",
+      "faculty": "Our faculty members are experts in their fields, committed to providing high-quality education and mentorship to students."
+      
+    },
+    "default_responses": [
+      "I'm sorry, I didn't quite catch that.",
+      "Can you rephrase your question?",
+      "That's interesting! Could you tell me more?",
+      "I'm here to help, but I didn't understand that.",
+      "Let me check on that for you.",
+      "Hmm, I don't have the answer to that right now. Let me look into it."
+    ],
+    "agent_names": [
+      "Alex",
+      "Jamie",
+      "Taylor",
+      "Jordan",
+      "Morgan",
+      "Casey",
+      "Pat",
+      "Riley",
+      "Dakota",
+      "Sam"
+    ]
+  }
+  
